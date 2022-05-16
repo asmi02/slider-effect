@@ -1,0 +1,117 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body
+{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 221, 0);
+}
+
+.book
+{
+    position: relative;
+    height: 600px;
+    width: 700px;
+    transition: transform 0.5s;
+}
+
+.paper
+{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+
+.front, .back
+{
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.front
+{
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid rgb(255, 221, 0);
+}
+
+.back
+{
+    z-index: 0;
+}
+
+.front-content , .back-content 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.back-content
+{
+    transform: rotateY(180deg);
+}
+
+.flipped .front,
+.flipped .back
+{
+    transform: rotateY(-180deg);
+}
+
+/* buttons */
+
+button
+{
+    border: none;
+    margin: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+button:focus
+{
+    outline: none;
+}
+
+button:hover i
+{
+    color: rgb(132, 132, 132);
+}
+
+i
+{
+    font-size: 50px;
+    color: gray;
+}
+
+#p1
+{
+    z-index: 3;
+}
+
+#p2
+{
+    z-index: 2;
+}
+
+#p3
+{
+    z-index: 1;
+}
